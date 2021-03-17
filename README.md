@@ -1,3 +1,3 @@
-# typescript-bwyht8
+# js-qjpnoe
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/typescript-bwyht8)
+[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/js-qjpnoe)
