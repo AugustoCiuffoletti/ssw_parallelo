@@ -18,9 +18,9 @@ function fetchTempForCity(city) {
 }
 Promise
   .all(citta.map(fetchTempForCity))     // Applica all'array di Promise costruito con "map"
-  .then(temps => {		        // temps e' l'array dei risultati di tutte le Promise    
+  .then(temps => {          // temps e' l'array dei risultati di tutte le Promise    
     return temps.reduce(		// utilizza il metodo reduce sull'array
-                                        // il reducer aggiunge al dizionario "data" 
+                            // il reducer aggiunge al dizionario "data" 
       (data, [ city, temp ]) => { data[city] = temp; return data; },  
       {});                              // "data" inizialmente vuoto
     })
