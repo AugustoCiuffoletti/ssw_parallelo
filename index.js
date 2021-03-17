@@ -2,7 +2,7 @@
 import './style.css';
 
 // Write TypeScript code!
-const appDiv: HTMLElement = document.getElementById('app');
+const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>Query in parallelo con le promise</h1>`;
 
 const API_KEY = 'd0fda39104b3c7c45fe031a5392964c1';
