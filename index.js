@@ -24,5 +24,5 @@ fetchall().then(temps => {
   console.log(temps);
   var media = 0;
   media = temps.reduce((media, data) => data + media) / temps.length;
-  document.getElementById("app").innerHTML= "La temperatura media è di " + media + " gradi";
+  document.getElementById("app").innerHTML= "La temperatura media e' di " + media + " gradi";
 });
