@@ -5,7 +5,7 @@ const API_URL = `https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY
 // La lista di citta'
 const citta = ["Milan", "Turin", "Pisa", "Rome", "Trento"];
 media(); // Invocazione della funzione
-// La funzione promette un array [ citta, temperatura ]
+// La funzione promette un array di temperature
 async function fetchTempForCity(city) {
   let response = await fetch(API_URL + "&q=" + city); // fetch() restituisce una promise
   if (response.ok) {
@@ -15,7 +15,6 @@ async function fetchTempForCity(city) {
     alert("Errore: " + response.status);
   }
 }
-// Definisce il metodo collegato al successo della fetchall
 async function media() {
   let media = 0;
   let temps = await Promise.all(citta.map(fetchTempForCity));
