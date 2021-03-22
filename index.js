@@ -9,10 +9,14 @@ const API_URL = `https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY
 // Set the list of cities
 const citta = ["Milan", "Turin", "Pisa", "Rome", "Trento"];
 // La funzione restituisce un array [ citta, temperatura ]
-function fetchTempForCity(city) {
-  return fetch(API_URL + "&q=" + city) // fetch restituisce una promise
-    .then(response => response.json()) // anche la json()
-    .then(data => data.main.temp); // passa un array di due posizioni
+async function fetchTempForCity(city) {
+  let response = await fetch(API_URL + "&q=" + city); // fetch restituisce una promise
+  if (response.ok) {
+    let json = await response.json();
+    return json.main.temp;
+  } else {
+    alert("Errore: " + response.status);
+  }
 }
 // Questa funzione promette un array con le tutte temperature
 function fetchall() {
@@ -21,7 +25,6 @@ function fetchall() {
 // Definisce il metodo collegato al successo della fetchall
 fetchall().then(temps => {
   // temps e' l'array dei risultati di tutte le Promise
-  console.log(temps);
   var media = 0;
   media = temps.reduce((media, data) => data + media) / temps.length;
   document.getElementById("app").innerHTML =
