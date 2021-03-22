@@ -2,7 +2,7 @@ import "./style.css";
 
 const API_KEY = "d0fda39104b3c7c45fe031a5392964c1";
 const API_URL = `https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}&units=metric`;
-// La lista di città
+// La lista di citta'
 const citta = ["Milan", "Turin", "Pisa", "Rome", "Trento"];
 media(); // Invocazione della funzione
 // La funzione promette un array [ citta, temperatura ]
